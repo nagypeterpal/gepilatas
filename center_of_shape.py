@@ -54,4 +54,4 @@ for c in cnts:
     cv2.imshow("Image", image)
     x+=1
 cv2.waitKey(0)
-#run python center_of_shape.py --image shapes_and_colors.png --colors colors.txt
+#run python center_of_shape.py --image shapes_and_colors.jpg --colors colors.txt
