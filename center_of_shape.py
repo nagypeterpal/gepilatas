@@ -1,3 +1,15 @@
+#run command 
+#run python center_of_shape.py --image shapes_and_colors.jpg --colors colors.txt
+
+#Módosítani:
+# 1. esetleg más szinter
+# 2. elore definialt szinek kozul melyikhez van a legkozelebb (legyenk alapszinek)
+# 3. 10 kep (életszerubb) tesztelése ember ellen
+# 4. software korlatai
+# 5. doksi tartalmazza a tesztelést, doksi repoba, repolink kuld véleményezésre
+
+#------------------------------------------------------------------------------
+
 # import the necessary packages
 import argparse
 import imutils
@@ -79,4 +91,5 @@ for c in cnts:
 # show the image
 cv2.imshow("Image", image)
 cv2.waitKey(0)
-#run python center_of_shape.py --image shapes_and_colors.jpg --colors colors.txt
+
+
