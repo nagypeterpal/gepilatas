@@ -20,9 +20,6 @@ import os
 #general variables
 #   threshold per channel
 thres_per_ch=10
-#   show intermediate images
-show_int_img=True
-#
 
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
@@ -64,12 +61,14 @@ for filename in os.listdir(directory):
     # load the image, convert it to grayscale, blur it slightly,
     #on the copy we find the contours
     gray = cv2.cvtColor(image_clone , cv2.COLOR_BGR2GRAY)
+    #cv2.imshow("gray", gray)
+    
     blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+    cv2.imshow("blurred", blurred)
+    
     thresh = cv2.threshold(blurred, 60, 255, cv2.THRESH_BINARY)[1]
-    if show_int_img==True:
-        cv2.imshow("gray", gray)
-        cv2.imshow("blurred", blurred)
-        cv2.imshow("thresh", thresh)
+    cv2.imshow("thresh", thresh)
+    
     # find contours in the thresholded image
     cnts = cv2.findContours(thresh, cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
     cnts = imutils.grab_contours(cnts)
