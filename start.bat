@@ -1,1 +1,1 @@
-python center_of_shape.py --image shapes_and_colors.jpg --colors colors.txt
+python center_of_shape.py --image images/image001.jpg --colors colors.txt
