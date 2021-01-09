@@ -1,20 +1,10 @@
 #run command 
-#run python center_of_shape.py --imagedir images --colors colors.txt
-
-#Módosítani:
-# 1. esetleg más szinter
-# 2. elore definialt szinek kozul melyikhez van a legkozelebb (legyenk alapszinek)
-# 3. 10 kep (életszerubb) tesztelése ember ellen
-# 4. software korlatai
-# 5. doksi tartalmazza a tesztelést, doksi repoba, repolink kuld véleményezésre
-
-#------------------------------------------------------------------------------
+# python center_of_shape.py --imagedir images --colors colors.txt
 
 # import the necessary packages
 import argparse
 import imutils
 import cv2
-import csv
 import os
 import numpy as np
 
@@ -83,7 +73,7 @@ for filename in os.listdir(directory):
     #cv2.imshow("thresh", thresh)
     
     # find contours in the thresholded image
-    cnts = cv2.findContours(thresh, cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+    cnts = cv2.findContours(thresh, cv2.RETR_LIST,cv2.CHAIN_APPROX_SIMPLE)
     cnts = imutils.grab_contours(cnts)
     ord_cnts= sorted(cnts, key=cv2.contourArea, reverse= True)
     
