@@ -114,6 +114,8 @@ for filename in os.listdir(directory):
         cv2.putText(image,'shape '+ str(x) , (cX, cY),cv2.FONT_HERSHEY_SIMPLEX, 0.5, (100,100,100), 2)
         cv2.putText(image,'closest color: ' + str(closest_color), (cX, cY+15),cv2.FONT_HERSHEY_SIMPLEX, 0.5, (100,100,100), 2)
         cv2.drawContours(image, [c], -1, (0, 255, 0), 2)
+
+        if(x==1): break
                 
         x+=1
 
@@ -121,5 +123,3 @@ for filename in os.listdir(directory):
     cv2.imshow("Image", image)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
-
-
